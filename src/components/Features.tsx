@@ -35,7 +35,7 @@ export default function Features() {
         <div className="text-center max-w-3xl mx-auto mb-20 animate-fade-in-up">
           <span className="text-fluxiqo font-semibold tracking-wider uppercase text-sm mb-3 block">Avantajlarımız</span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight mb-6">
-            Zorluğu kolaya çeviren AI yetenekleri.
+            Zorluğu kolaya çeviren AI yetenekleri
           </h2>
           <p className="text-gray-600 text-lg">
             İşletmenizin sırtındaki yükü almak için en ince ayrıntısına kadar düşünülmüş otomasyon özellikleri sunuyoruz.

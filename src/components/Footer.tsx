@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Logo from "./Logo";
 
@@ -53,9 +55,10 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} Fluxiqo Automation. Tüm hakları saklıdır.
           </p>
-          <div className="flex gap-6">
-            <Link href="#" className="text-gray-400 hover:text-fluxiqo transition-colors text-sm">Gizlilik Politikası</Link>
-            <Link href="#" className="text-gray-400 hover:text-fluxiqo transition-colors text-sm">Kullanım Şartları</Link>
+          <div className="flex gap-4 md:gap-6 flex-wrap justify-center">
+            <button onClick={() => window.dispatchEvent(new CustomEvent('openLegalModal', { detail: { type: 'kvkk' }}))} className="text-gray-400 hover:text-fluxiqo transition-colors text-[13px] md:text-sm">KVKK Aydınlatma Metni</button>
+            <button onClick={() => window.dispatchEvent(new CustomEvent('openLegalModal', { detail: { type: 'privacy' }}))} className="text-gray-400 hover:text-fluxiqo transition-colors text-[13px] md:text-sm">Gizlilik Politikası</button>
+            <button onClick={() => window.dispatchEvent(new CustomEvent('openLegalModal', { detail: { type: 'terms' }}))} className="text-gray-400 hover:text-fluxiqo transition-colors text-[13px] md:text-sm">Kullanım Şartları</button>
           </div>
         </div>
       </div>

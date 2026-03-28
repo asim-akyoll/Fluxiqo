@@ -31,8 +31,8 @@ export default function Process() {
         <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-2xl">
             <span className="text-fluxiqo font-semibold tracking-wider uppercase text-sm mb-3 block">Sürecimiz</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
-              Ölçülebilir sonuçlar için adımlarımız.
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight mb-6">
+              Ölçülebilir sonuçlar için adımlarımız
             </h2>
           </div>
           <p className="text-gray-600 text-lg md:text-right max-w-md">

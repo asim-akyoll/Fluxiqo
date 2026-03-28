@@ -38,7 +38,7 @@ export default function Testimonials() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-fluxiqo font-semibold tracking-wider uppercase text-sm mb-3 block">Müşteri Yorumları</span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight mb-6">
-            Bizi onlardan dinleyin.
+            Bizi onlardan dinleyin
           </h2>
           <p className="text-gray-600 text-lg">
             İşletmelerinin büyümesini bize emanet eden şirket ve ekiplerin gerçek deneyimleri.

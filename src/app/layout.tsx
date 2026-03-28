@@ -10,6 +10,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Fluxiqo | Dijital Otomasyon Ajansı",
   description: "İşletmelerin daha akıllı çalışması, daha hızlı ölçeklenmesi ve özel yapay zeka çözümleriyle cesurca yenilik yapması için gücümüzü kullanıyoruz.",
+  icons: {
+    icon: "/Fluxiqo-SolÜst-Logo.png",
+  },
 };
 
 export default function RootLayout({

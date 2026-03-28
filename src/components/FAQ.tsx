@@ -41,7 +41,7 @@ export default function FAQ() {
         <div className="text-center mb-16">
           <span className="text-fluxiqo font-semibold tracking-wider uppercase text-sm mb-3 block">Sorular & Cevaplar</span>
           <h2 className="text-4xl font-bold text-gray-900 tracking-tight leading-tight mb-4">
-            Merak ettiklerinizin yanıtları.
+            Merak ettiklerinizin yanıtları
           </h2>
           <p className="text-gray-500 text-lg">
             Aklınıza takılan soruları çözmek için buradayız. Aşağıda en çok sorulan soruları bulabilirsiniz.
