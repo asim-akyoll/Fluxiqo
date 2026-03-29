@@ -8,10 +8,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fluxiqo.com"),
   title: "Fluxiqo | Dijital Otomasyon Ajansı",
   description: "İşletmelerin daha akıllı çalışması, daha hızlı ölçeklenmesi ve özel yapay zeka çözümleriyle cesurca yenilik yapması için gücümüzü kullanıyoruz.",
   icons: {
     icon: "/Fluxiqo-SolÜst-Logo.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: "https://www.fluxiqo.com",
   },
 };
 
