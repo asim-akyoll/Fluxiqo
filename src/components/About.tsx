@@ -25,7 +25,7 @@ export default function About() {
               BİZ KİMİZ?
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight mb-6">
-              Sıradanlığı reddebiyor,<br/> 
+              Sıradanlığı reddediyor,<br/> 
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-fluxiqo to-fluxiqo-light">
                 geleceğin iş modellerini 
               </span> inşa ediyoruz.
