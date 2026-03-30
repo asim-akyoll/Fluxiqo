@@ -60,10 +60,10 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggle(idx)}
-                className="w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none"
+                className="w-full text-left px-6 py-5 flex items-center gap-4 focus:outline-none"
               >
-                <span className="text-lg font-semibold text-gray-900 tracking-tight pr-8">{faq.question}</span>
-                <span className={`flex items-center justify-center w-8 h-8 rounded-full transition-colors ${openIdx === idx ? "bg-fluxiqo text-white" : "bg-gray-200 text-gray-500"}`}>
+                <span className="flex-1 text-base md:text-lg font-semibold text-gray-900 tracking-tight">{faq.question}</span>
+                <span className={`flex items-center justify-center w-8 h-8 rounded-full transition-colors shrink-0 ${openIdx === idx ? "bg-fluxiqo text-white" : "bg-gray-200 text-gray-500"}`}>
                   {openIdx === idx ? <Minus size={16} /> : <Plus size={16} />}
                 </span>
               </button>

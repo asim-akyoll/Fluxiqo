@@ -50,19 +50,19 @@ export default function Compare() {
 
           <div className="space-y-6">
             {comparisons.map((row, idx) => (
-              <div key={idx} className="grid grid-cols-2 gap-4 md:gap-8 group">
-                <div className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm group-hover:border-fluxiqo/30 transition-colors">
-                  <div className="w-6 h-6 rounded-full bg-fluxiqo/10 text-fluxiqo flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={14} strokeWidth={3} />
+              <div key={idx} className="grid grid-cols-2 gap-2 md:gap-8 group">
+                <div className="flex items-start gap-2 md:gap-3 bg-white p-3 md:p-4 rounded-2xl border border-gray-100 shadow-sm group-hover:border-fluxiqo/30 transition-colors min-w-0">
+                  <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-fluxiqo/10 text-fluxiqo flex items-center justify-center shrink-0 mt-0.5">
+                    <Check size={12} strokeWidth={3} />
                   </div>
-                  <span className="text-gray-900 font-medium text-sm md:text-base leading-snug">{row.fluxiqo}</span>
+                  <span className="text-gray-900 font-medium text-xs md:text-base leading-snug break-words min-w-0 flex-1">{row.fluxiqo}</span>
                 </div>
                 
-                <div className="flex items-start gap-3 bg-gray-100/50 p-4 rounded-2xl border border-transparent opacity-80 mix-blend-multiply">
-                  <div className="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center shrink-0 mt-0.5">
-                    <X size={14} strokeWidth={3} />
+                <div className="flex items-start gap-2 md:gap-3 bg-gray-100/50 p-3 md:p-4 rounded-2xl border border-transparent opacity-80 min-w-0">
+                  <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center shrink-0 mt-0.5">
+                    <X size={12} strokeWidth={3} />
                   </div>
-                  <span className="text-gray-500 font-medium text-sm md:text-base leading-snug">{row.others}</span>
+                  <span className="text-gray-500 font-medium text-xs md:text-base leading-snug break-words min-w-0 flex-1">{row.others}</span>
                 </div>
               </div>
             ))}
