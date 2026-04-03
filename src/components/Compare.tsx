@@ -36,7 +36,7 @@ export default function Compare() {
           <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 pb-6 border-b border-gray-200">
             <div className="flex flex-col items-center sm:items-start">
               <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-3 shadow-sm shadow-fluxiqo/20 overflow-hidden border border-gray-100 p-1">
-                <img src="/Fluxiqo-Logo.png" alt="Fluxiqo Logo" className="w-full h-full object-contain scale-[3.5] mix-blend-multiply" />
+                <img src="/sonolsunartık.png" alt="Fluxiqo Logo" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 tracking-tight">Fluxiqo</h3>
             </div>

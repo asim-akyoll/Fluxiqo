@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,12 +7,17 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fluxiqo.com"),
   title: "Fluxiqo | Dijital Otomasyon Ajansı",
   description: "İşletmelerin daha akıllı çalışması, daha hızlı ölçeklenmesi ve özel yapay zeka çözümleriyle cesurca yenilik yapması için gücümüzü kullanıyoruz.",
   icons: {
-    icon: "/Fluxiqo-SolÜst-Logo.png",
+    icon: "/favicon789987.png",
   },
   robots: {
     index: true,
@@ -33,7 +38,7 @@ export const metadata: Metadata = {
     description: "İşletmelerin daha akıllı çalışması, daha hızlı ölçeklenmesi ve özel yapay zeka çözümleriyle cesurca yenilik yapması için gücümüzü kullanıyoruz.",
     images: [
       {
-        url: "/Fluxiqo-Logo.png",
+        url: "/sonolsunartık.png",
         width: 1200,
         height: 630,
         alt: "Fluxiqo - Dijital Otomasyon Ajansı",
@@ -45,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fluxiqo | Dijital Otomasyon Ajansı",
     description: "İşletmelerin daha akıllı çalışması, daha hızlı ölçeklenmesi ve özel yapay zeka çözümleriyle cesurca yenilik yapması için gücümüzü kullanıyoruz.",
-    images: ["/Fluxiqo-Logo.png"],
+    images: ["/sonolsunartık.png"],
   },
 };
 
@@ -60,8 +65,8 @@ export default function RootLayout({
     "name": "Fluxiqo",
     "alternateName": "Fluxiqo Otomasyon Ajansı",
     "url": "https://www.fluxiqo.com",
-    "logo": "https://www.fluxiqo.com/Fluxiqo-Logo.png",
-    "image": "https://www.fluxiqo.com/Fluxiqo-Logo.png",
+    "logo": "https://www.fluxiqo.com/sonolsunartık.png",
+    "image": "https://www.fluxiqo.com/sonolsunartık.png",
     "description": "İşletmelerin daha akıllı çalışması, daha hızlı ölçeklenmesi ve özel yapay zeka çözümleriyle cesurca yenilik yapması için gucumuzu kullanıyoruz.",
     "email": "info@fluxiqo.com",
     "areaServed": "TR",
@@ -90,7 +95,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="tr" className={`${inter.variable}`}>
+    <html lang="tr" className={`${inter.variable} ${syne.variable}`}>
       <head>
         <script
           type="application/ld+json"

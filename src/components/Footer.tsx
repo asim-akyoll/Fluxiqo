@@ -12,8 +12,8 @@ export default function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4 group">
               <Logo className="w-10 h-10" />
-              <span className="font-bold text-xl tracking-tight text-gray-900 group-hover:text-fluxiqo transition-colors duration-300">
-                FLUXIQO
+              <span className="font-bold text-xl tracking-tight text-black font-syne">
+                Fluxiqo
               </span>
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">

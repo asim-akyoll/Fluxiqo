@@ -5,6 +5,7 @@
   --color-fluxiqo-light: #d666ff;
   --color-fluxiqo-dark: #6a0099;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-syne: var(--font-syne), sans-serif;
 }
 
 :root {
