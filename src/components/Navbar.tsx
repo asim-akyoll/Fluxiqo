@@ -50,7 +50,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-gray-600 hover:text-fluxiqo transition-colors duration-200 relative group"
+                className="text-sm font-medium text-gray-600 hover:text-fluxiqo transition-colors duration-200 relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fluxiqo focus-visible:ring-offset-2 rounded-sm"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-fluxiqo transition-all duration-300 group-hover:w-full rounded-full"></span>
@@ -76,7 +76,10 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-600 hover:text-fluxiqo focus:outline-none transition-colors"
+              aria-label={isMobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
+              className="text-gray-600 hover:text-fluxiqo transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fluxiqo focus-visible:ring-offset-2 rounded-md p-1"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -86,7 +89,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl absolute w-full rounded-b-2xl overflow-hidden">
+        <div id="mobile-menu" className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl absolute w-full rounded-b-2xl overflow-hidden">
           <div className="px-4 pt-2 pb-6 space-y-1 flex flex-col items-center">
             {navLinks.map((link) => (
               <a

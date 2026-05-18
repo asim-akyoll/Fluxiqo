@@ -7,25 +7,29 @@ const testimonials = [
   {
     name: "Bora Arslan",
     role: "Müşteri İlişkileri Yöneticisi",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    initials: "BA",
+    color: "from-violet-500 to-purple-700",
     content: "Fluxiqo’nun kurduğu chatbot, destek taleplerimizin büyük kısmını otomatik karşıladı; hem iş yükümüz azaldı hem de müşterilerimiz anında cevap alır hâle geldi.",
   },
   {
     name: "Tuğçe Kara",
     role: "Klinik Koordinatörü",
-    image: "https://randomuser.me/api/portraits/women/47.jpg",
+    initials: "TK",
+    color: "from-fuchsia-500 to-pink-700",
     content: "Fluxiqo’nun sesli asistanı kliniğimizde randevu ve bilgilendirme aramalarını otomatik karşılıyor. Hastalarımız 7/24 ulaşabiliyor, danışma ekibimizin eli ciddi anlamda rahatladı.",
   },
   {
     name: "Berna Yıldız",
     role: "Kreatif Direktör",
-    image: "https://randomuser.me/api/portraits/women/63.jpg",
+    initials: "BY",
+    color: "from-purple-500 to-indigo-700",
     content: "Fluxiqo’nun görsel üretim sistemiyle yeni koleksiyonlarımızın ürün fotoğrafları ve kombinlerini dakikalar içinde oluşturuyoruz. Çekim maliyetimiz düştü, site ve reklam görsellerimiz çok daha profesyonel görünüyor.",
   },
   {
     name: "Çağatay Şanlı",
     role: "Dijital Pazarlama Uzmanı",
-    image: "https://randomuser.me/api/portraits/men/46.jpg",
+    initials: "ÇŞ",
+    color: "from-violet-600 to-fuchsia-700",
     content: "Fluxiqo’nun AI video sistemi ile Instagram ve TikTok için haftalık reklam videolarını otomatik üretiyoruz; içerik üretim süremiz saatlerden dakikalara indi.",
   },
 ];
@@ -69,12 +73,8 @@ export default function Testimonials() {
               </div>
               
               <div className="flex items-center gap-4 mt-auto">
-                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md ring-offset-2 ring-2 ring-fluxiqo/20 shrink-0 bg-gray-100 relative">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.color} flex items-center justify-center border-2 border-white shadow-md ring-offset-2 ring-2 ring-fluxiqo/20 shrink-0`}>
+                  <span className="text-white font-bold text-sm select-none">{testimonial.initials}</span>
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">{testimonial.name}</h4>

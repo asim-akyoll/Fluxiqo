@@ -1,0 +1,275 @@
+{
+  "brand": "ClaudeKit Marketing - Fluxiqo Purple",
+  "primitive": {
+    "color": {
+      "fluxiqo-purple": {
+        "50": {
+          "$value": "#d666ff",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#d666ff",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#FF99FF",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#FF66FF",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#E733FF",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#b400ff",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#6a0099",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#6800B3",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#41008C",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#1B0066",
+          "$type": "color"
+        }
+      },
+      "fluxiqo-dark": {
+        "50": {
+          "$value": "#FFE6FF",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#FFCCFF",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#FF99FF",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#D066FF",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#9D33CC",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#6a0099",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#440073",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#1E004D",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#000026",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#000000",
+          "$type": "color"
+        }
+      },
+      "fluxiqo-light": {
+        "50": {
+          "$value": "#FFFFFF",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#FFFFFF",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#FFFFFF",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#FFCCFF",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#FF99FF",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#d666ff",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#B040D9",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#8A1AB3",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#63008C",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#3D0066",
+          "$type": "color"
+        }
+      }
+    }
+  },
+  "semantic": {
+    "color": {
+      "primary": {
+        "$value": "{primitive.color.fluxiqo-purple.500}",
+        "$type": "color"
+      },
+      "primary-hover": {
+        "$value": "{primitive.color.fluxiqo-purple.600}",
+        "$type": "color"
+      },
+      "primary-light": {
+        "$value": "{primitive.color.fluxiqo-purple.400}",
+        "$type": "color"
+      },
+      "primary-lighter": {
+        "$value": "{primitive.color.fluxiqo-purple.100}",
+        "$type": "color"
+      },
+      "primary-dark": {
+        "$value": "{primitive.color.fluxiqo-purple.600}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{primitive.color.fluxiqo-dark.500}",
+        "$type": "color"
+      },
+      "secondary-hover": {
+        "$value": "{primitive.color.fluxiqo-dark.600}",
+        "$type": "color"
+      },
+      "secondary-light": {
+        "$value": "{primitive.color.fluxiqo-dark.300}",
+        "$type": "color"
+      },
+      "secondary-dark": {
+        "$value": "{primitive.color.fluxiqo-dark.600}",
+        "$type": "color"
+      },
+      "accent": {
+        "$value": "{primitive.color.fluxiqo-light.500}",
+        "$type": "color"
+      },
+      "accent-hover": {
+        "$value": "{primitive.color.fluxiqo-light.600}",
+        "$type": "color"
+      },
+      "accent-light": {
+        "$value": "{primitive.color.fluxiqo-light.300}",
+        "$type": "color"
+      },
+      "success": {
+        "$value": "{primitive.color.fluxiqo-light.500}",
+        "$type": "color"
+      },
+      "success-light": {
+        "$value": "{primitive.color.fluxiqo-light.300}",
+        "$type": "color"
+      },
+      "error": {
+        "$value": "{primitive.color.fluxiqo-purple.500}",
+        "$type": "color"
+      },
+      "error-light": {
+        "$value": "{primitive.color.fluxiqo-purple.300}",
+        "$type": "color"
+      },
+      "info": {
+        "$value": "{primitive.color.fluxiqo-dark.500}",
+        "$type": "color"
+      },
+      "info-light": {
+        "$value": "{primitive.color.fluxiqo-dark.300}",
+        "$type": "color"
+      },
+      "primary-active": {
+        "$value": "{primitive.color.fluxiqo-purple.700}",
+        "$type": "color"
+      }
+    }
+  },
+  "component": {
+    "button": {
+      "primary": {
+        "bg": {
+          "$value": "#111827",
+          "$type": "color"
+        },
+        "bg-hover": {
+          "$value": "#b400ff",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "#ffffff",
+          "$type": "color"
+        },
+        "radius": {
+          "$value": "9999px",
+          "$type": "borderRadius"
+        }
+      },
+      "secondary": {
+        "bg": {
+          "$value": "#ffffff",
+          "$type": "color"
+        },
+        "bg-hover": {
+          "$value": "#b400ff1A",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "#111827",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "#e5e7eb",
+          "$type": "color"
+        },
+        "radius": {
+          "$value": "9999px",
+          "$type": "borderRadius"
+        }
+      },
+      "cta": {
+        "bg": {
+          "$value": "#b400ff",
+          "$type": "color"
+        },
+        "bg-hover": {
+          "$value": "#6a0099",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "#ffffff",
+          "$type": "color"
+        },
+        "radius": {
+          "$value": "9999px",
+          "$type": "borderRadius"
+        }
+      }
+    }
+  }
+}

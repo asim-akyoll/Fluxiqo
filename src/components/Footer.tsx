@@ -26,7 +26,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><Link href="#services" className="text-gray-500 hover:text-fluxiqo text-sm transition-colors">Hizmetlerimiz</Link></li>
               <li><Link href="#process" className="text-gray-500 hover:text-fluxiqo text-sm transition-colors">İş Akışı Değerlendirmesi</Link></li>
-              <li><Link href="#testimonials" className="text-gray-500 hover:text-fluxiqo text-sm transition-colors">Yorumlar</Link></li>
+              <li><Link href="#reviews" className="text-gray-500 hover:text-fluxiqo text-sm transition-colors">Yorumlar</Link></li>
             </ul>
           </div>
 
@@ -35,7 +35,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><Link href="#about" className="text-gray-500 hover:text-fluxiqo text-sm transition-colors">Hakkımızda</Link></li>
               <li><Link href="#reviews" className="text-gray-500 hover:text-fluxiqo text-sm transition-colors">Müşteri Yorumları</Link></li>
-              <li><Link href="#contact" className="text-gray-500 hover:text-fluxiqo text-sm transition-colors">İletişim</Link></li>
+              <li><button onClick={() => window.dispatchEvent(new Event('openCalModal'))} className="text-gray-500 hover:text-fluxiqo text-sm transition-colors cursor-pointer">İletişim</button></li>
             </ul>
           </div>
 
@@ -56,9 +56,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Fluxiqo Automation. Tüm hakları saklıdır.
           </p>
           <div className="flex gap-4 md:gap-6 flex-wrap justify-center">
-            <button onClick={() => window.dispatchEvent(new CustomEvent('openLegalModal', { detail: { type: 'kvkk' }}))} className="text-gray-400 hover:text-fluxiqo transition-colors text-[13px] md:text-sm">KVKK Aydınlatma Metni</button>
-            <button onClick={() => window.dispatchEvent(new CustomEvent('openLegalModal', { detail: { type: 'privacy' }}))} className="text-gray-400 hover:text-fluxiqo transition-colors text-[13px] md:text-sm">Gizlilik Politikası</button>
-            <button onClick={() => window.dispatchEvent(new CustomEvent('openLegalModal', { detail: { type: 'terms' }}))} className="text-gray-400 hover:text-fluxiqo transition-colors text-[13px] md:text-sm">Kullanım Şartları</button>
+            <button aria-label="KVKK Aydınlatma Metni'ni görüntüle" onClick={() => window.dispatchEvent(new CustomEvent('openLegalModal', { detail: { type: 'kvkk' }}))} className="text-gray-400 hover:text-fluxiqo transition-colors text-[13px] md:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fluxiqo rounded-sm">KVKK Aydınlatma Metni</button>
+            <button aria-label="Gizlilik Politikası'nı görüntüle" onClick={() => window.dispatchEvent(new CustomEvent('openLegalModal', { detail: { type: 'privacy' }}))} className="text-gray-400 hover:text-fluxiqo transition-colors text-[13px] md:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fluxiqo rounded-sm">Gizlilik Politikası</button>
+            <button aria-label="Kullanım Şartları'nı görüntüle" onClick={() => window.dispatchEvent(new CustomEvent('openLegalModal', { detail: { type: 'terms' }}))} className="text-gray-400 hover:text-fluxiqo transition-colors text-[13px] md:text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fluxiqo rounded-sm">Kullanım Şartları</button>
           </div>
         </div>
       </div>

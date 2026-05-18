@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShieldCheck, FileText, Scale } from "lucide-react";
 
@@ -9,32 +9,30 @@ type LegalType = "kvkk" | "privacy" | "terms" | null;
 export default function LegalModal() {
   const [activeLegal, setActiveLegal] = useState<LegalType>(null);
 
-  // Prevent scrolling when modal is open
+  const close = useCallback(() => setActiveLegal(null), []);
+
   useEffect(() => {
-    if (activeLegal) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
+    document.body.style.overflow = activeLegal ? "hidden" : "unset";
+    return () => { document.body.style.overflow = "unset"; };
   }, [activeLegal]);
 
-  // Listen for custom events to open the modal with a specific legal text
   useEffect(() => {
     const handleOpen = (e: Event) => {
       const customEvent = e as CustomEvent;
-      if (customEvent.detail && customEvent.detail.type) {
+      if (customEvent.detail?.type) {
         setActiveLegal(customEvent.detail.type as LegalType);
       }
     };
-
     window.addEventListener("openLegalModal", handleOpen);
     return () => window.removeEventListener("openLegalModal", handleOpen);
   }, []);
 
-  const close = () => setActiveLegal(null);
+  useEffect(() => {
+    if (!activeLegal) return;
+    const handleKey = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [activeLegal, close]);
 
   const getIcon = () => {
     switch (activeLegal) {
@@ -65,7 +63,10 @@ export default function LegalModal() {
   return (
     <AnimatePresence>
       {activeLegal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-12">
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-12"
+          onClick={(e) => { if (e.target === e.currentTarget) close(); }}
+        >
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -73,10 +74,14 @@ export default function LegalModal() {
             exit={{ opacity: 0 }}
             onClick={close}
             className="absolute inset-0 bg-gray-900/40 backdrop-blur-sm"
+            aria-hidden="true"
           />
 
           {/* Modal Content */}
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="legal-modal-title"
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -90,7 +95,7 @@ export default function LegalModal() {
                   {getIcon()}
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 tracking-tight">
+                  <h3 id="legal-modal-title" className="text-lg md:text-xl font-bold text-gray-900 tracking-tight">
                     {getTitle()}
                   </h3>
                   <p className="text-xs md:text-sm text-gray-500">
@@ -100,9 +105,10 @@ export default function LegalModal() {
               </div>
               <button
                 onClick={close}
-                className="w-10 h-10 bg-white border border-gray-200 text-gray-400 hover:text-gray-900 hover:bg-gray-50 rounded-full flex items-center justify-center transition-colors shadow-sm"
+                aria-label="Modalı kapat"
+                className="w-10 h-10 bg-white border border-gray-200 text-gray-400 hover:text-gray-900 hover:bg-gray-50 rounded-full flex items-center justify-center transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fluxiqo"
               >
-                <X size={20} />
+                <X size={20} aria-hidden="true" />
               </button>
             </div>
 

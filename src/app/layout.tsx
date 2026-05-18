@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.fluxiqo.com",
   },
+  verification: {
+    google: "SXUwpV5pVljiWS7DoI4rVKdjRb09EeebrDm7yzGDXXk",
+  },
   openGraph: {
     type: "website",
     url: "https://www.fluxiqo.com",

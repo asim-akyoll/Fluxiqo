@@ -49,44 +49,53 @@ export default function FAQ() {
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: idx * 0.1 }}
-              className="bg-gray-50 border border-gray-100 rounded-2xl overflow-hidden hover:border-fluxiqo/30 transition-colors"
-            >
-              <button
-                onClick={() => toggle(idx)}
-                className="w-full text-left px-6 py-5 flex items-center gap-4 focus:outline-none"
+          {faqs.map((faq, idx) => {
+            const panelId = `faq-panel-${idx}`;
+            const isOpen = openIdx === idx;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: idx * 0.1 }}
+                className="bg-gray-50 border border-gray-100 rounded-2xl overflow-hidden hover:border-fluxiqo/30 transition-colors"
               >
-                <span className="flex-1 text-base md:text-lg font-semibold text-gray-900 tracking-tight">{faq.question}</span>
-                <span className={`flex items-center justify-center w-8 h-8 rounded-full transition-colors shrink-0 ${openIdx === idx ? "bg-fluxiqo text-white" : "bg-gray-200 text-gray-500"}`}>
-                  {openIdx === idx ? <Minus size={16} /> : <Plus size={16} />}
-                </span>
-              </button>
-              
-              <AnimatePresence>
-                {openIdx === idx && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-6 text-gray-600 leading-relaxed text-base pt-0 border-t border-gray-100/50 mt-2">
-                      <div className="pt-4">
-                        {faq.answer}
+                <button
+                  onClick={() => toggle(idx)}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  className="w-full text-left px-6 py-5 flex items-center gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fluxiqo focus-visible:ring-inset rounded-2xl"
+                >
+                  <span className="flex-1 text-base md:text-lg font-semibold text-gray-900 tracking-tight">{faq.question}</span>
+                  <span className={`flex items-center justify-center w-8 h-8 rounded-full transition-colors shrink-0 ${isOpen ? "bg-fluxiqo text-white" : "bg-gray-200 text-gray-500"}`} aria-hidden="true">
+                    {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                  </span>
+                </button>
+
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      id={panelId}
+                      role="region"
+                      aria-label={faq.question}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 text-gray-600 leading-relaxed text-base pt-0 border-t border-gray-100/50 mt-2">
+                        <div className="pt-4">
+                          {faq.answer}
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>

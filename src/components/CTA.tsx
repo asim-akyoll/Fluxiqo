@@ -1,30 +1,31 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar } from "lucide-react";
 
 export default function CTA() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Prevent scrolling on body when modal is open
+  const close = useCallback(() => setIsModalOpen(false), []);
+
   useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'unset';
+    return () => { document.body.style.overflow = 'unset'; };
   }, [isModalOpen]);
 
-  // Listen for global open events from other components like Navbar or Hero
   useEffect(() => {
     const handleOpen = () => setIsModalOpen(true);
     window.addEventListener('openCalModal', handleOpen);
     return () => window.removeEventListener('openCalModal', handleOpen);
   }, []);
+
+  useEffect(() => {
+    if (!isModalOpen) return;
+    const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close(); };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [isModalOpen, close]);
 
   return (
     <>
@@ -53,8 +54,14 @@ export default function CTA() {
       {/* Booking Modal */}
       <AnimatePresence>
         {isModalOpen && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-gray-900/80 backdrop-blur-sm">
+          <div
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-gray-900/80 backdrop-blur-sm"
+            onClick={(e) => { if (e.target === e.currentTarget) close(); }}
+          >
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="cal-modal-title"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -64,19 +71,20 @@ export default function CTA() {
               {/* Modal Header */}
               <div className="flex justify-between items-center px-6 py-4 border-b border-gray-100 bg-white z-20">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-fluxiqo/10 flex items-center justify-center text-fluxiqo">
+                  <div className="w-10 h-10 rounded-full bg-fluxiqo/10 flex items-center justify-center text-fluxiqo" aria-hidden="true">
                     <Calendar size={20} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 leading-tight">Ücretsiz Değerlendirme</h3>
+                    <h3 id="cal-modal-title" className="font-bold text-gray-900 leading-tight">Ücretsiz Değerlendirme</h3>
                     <p className="text-xs text-gray-500">Fluxiqo Otomasyon Uzmanları</p>
                   </div>
                 </div>
-                <button 
-                  onClick={() => setIsModalOpen(false)}
-                  className="p-2 bg-gray-50 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors"
+                <button
+                  onClick={close}
+                  aria-label="Modalı kapat"
+                  className="p-2 bg-gray-50 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fluxiqo"
                 >
-                  <X size={20} />
+                  <X size={20} aria-hidden="true" />
                 </button>
               </div>
               

@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-fluxiqo/10 rounded-full blur-3xl opacity-50 animate-pulse"></div>
         <div className="absolute -top-20 right-1/4 w-[400px] h-[400px] bg-fluxiqo-light/10 rounded-full blur-3xl opacity-50"></div>
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 opacity-[0.15] mix-blend-overlay" style={{backgroundImage:"url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")", backgroundRepeat:"repeat", backgroundSize:"128px 128px"}}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -45,7 +45,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-sm md:text-base text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed"
+          className="text-base md:text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed"
         >
           En kritik iş süreçlerinizi otomatikleştirmek için yapay zekânın gücünü kullanın; zamandan tasarruf edin, maliyetleri düşürün ve ekibinizin odağını gerçekten önemli işlere kaydırın.
         </motion.p>
